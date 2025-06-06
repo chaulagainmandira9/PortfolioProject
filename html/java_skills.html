@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java in Mining Tech | Mandira's Portfolio</title>
+    <link rel="stylesheet" href="../CSS/portfolio.css">
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .blog-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .code-sample {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        .dark-mode .code-sample {
+            background-color: #2d2d2d;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="light-mode">
+<header class="header light-mode">
+    <img src="../images/mining_logo/logo.png" alt="Mining logo" style="width: 300px;">
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="MC_A4_mining.html">← Back to Mining Portfolio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="blog-container">
+    <article>
+        <div class="blog-header">
+            <h1>Java Programming for Mining Applications</h1>
+            <p>Building tools that make mining operations smarter</p>
+        </div>
+
+        <h2>My Java Projects</h2>
+        <ul>
+            <li>Equipment monitoring dashboard</li>
+            <li>Automated safety checklist system</li>
+            <li>Data analysis tools for geologists</li>
+            <li>Inventory management scripts</li>
+        </ul>
+
+        <h3>Example Code: Ore Quality Calculator</h3>
+        <div class="code-sample">
+<pre>public class OreAnalyzer {
+    public static void main(String[] args) {
+        // Sample mining data analysis
+        double[] samples = {23.4, 25.1, 22.8, 24.5};
+        double average = calculateAverage(samples);
+
+        System.out.println("Average ore quality: "
+            + average + "% mineral content");
+        if(average > 24.0) {
+            System.out.println("✅ High quality - prioritize extraction");
+        }
+    }
+
+    public static double calculateAverage(double[] values) {
+        double sum = 0.0;
+        for(double val : values) {
+            sum += val;
+        }
+        return sum / values.length;
+    }
+}</pre>
+        </div>
+
+        <h2>Business Benefits</h2>
+        <ul>
+            <li>Faster decision-making with real-time data</li>
+            <li>Reduced human error in calculations</li>
+            <li>Automated repetitive tasks</li>
+            <li>Custom solutions for unique mining challenges</li>
+        </ul>
+
+        <a href="MC_A4_mining.html" class="back-link">← Back to Mining Portfolio</a>
+    </article>
+</main>
+
+<footer class="light-mode">
+    <p>&copy; 2025 Mandira Chaulagain</p>
+</footer>
+</body>
+</html>

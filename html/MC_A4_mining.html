@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandira's Mining Technology Portfolio</title>
+    <link rel="stylesheet" href="../CSS/portfolio.css">
+    <link rel="icon" href="../images/mining_logo/logo.png" type="image/png">
+</head>
+<body class="light-mode">
+<header class="header light-mode">
+    <img src="../images/mining_logo/logo.png" alt="Mining logo" style="width: 400px; height: auto; vertical-align: middle;">
+
+    <h1>Welcome to Mandira's Portfolio</h1>
+    <nav class="light-mode">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MC_A4_resume.html">Resume</a></li>
+            <li><a href="MC_A4_about.html">About</a></li>
+            <li><a href="MC_A4_web_skills.html">Web Skills</a></li>
+            <li><a href="MC_A4_mining.html">Mining Cooperation</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h2>Modernizing Mining Through Technology</h2>
+        <p>Bridging the gap between mineral resources and digital innovation</p>
+    </section>
+
+    <section>
+        <h2>About Our Mining Operations</h2>
+        <div class="about-mining">
+            <p>The mining industry forms the backbone of modern civilization, extracting essential minerals that power our technology, build our infrastructure, and create everyday products. At our corporation, we specialize in:</p>
+
+            <ul>
+                <li><strong>Mineral Exploration</strong> - Using advanced geospatial technology to identify deposits</li>
+                <li><strong>Responsible Extraction</strong> - Sustainable practices that minimize environmental impact</li>
+                <li><strong>Ore Processing</strong> - Modern refining techniques to maximize yield</li>
+                <li><strong>Supply Chain Management</strong> - Efficient distribution of raw materials to manufacturers</li>
+            </ul>
+
+            <p>Our operations leverage cutting-edge technology to ensure safety, efficiency, and environmental stewardship in extracting resources like copper, lithium, and rare earth elements that are crucial for renewable energy systems, electronics, and industrial applications.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technology Skills Applied</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Database Management</h3>
+                <p>Designed and maintained SQL databases for tracking mineral inventories, equipment maintenance, and safety compliance records. Implemented data visualization dashboards for operational analytics.</p>
+                <a href="database_skills.html" class="learn-more">Learn More</a>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java Programming</h3>
+                <p>Developed custom applications for equipment monitoring systems and geological data analysis. Created automation scripts to streamline reporting processes.</p>
+                <a href="java_skills.html" class="learn-more">Learn More</a>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Built internal web portals for real-time monitoring of mining operations. Designed responsive interfaces for field technicians to access schematics and manuals.</p>
+                <a href="web_details.html" class="learn-more">Learn More</a>
+            </div>
+
+            <div class="skill-card">
+                <h3>Communication</h3>
+                <p>Facilitated cross-department collaboration through documentation and training materials. Translated technical specifications for non-technical stakeholders.</p>
+                <a href="communication_skills.html" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="conclusion">
+        <h2>Conclusion: Technology Transforming Mining</h2>
+        <div>
+            <p>My technical skills have directly contributed to modernizing our mining operations by:</p>
+            <ul>
+                <li>Digitizing paper-based processes to improve accuracy and accessibility</li>
+                <li>Developing tools that enhance operational efficiency and safety compliance</li>
+                <li>Creating data visualization systems that help managers make informed decisions</li>
+                <li>Building communication bridges between technical teams and field operators</li>
+            </ul>
+            <p>This portfolio demonstrates how web development and programming skills can drive innovation even in traditional industries like mining. By applying these digital solutions, we're making mineral extraction safer, more efficient, and more sustainable for the future.</p>
+        </div>
+    </section>
+    <section class="center">
+        <button class="newsletter-btn" onclick="window.open('newsletter.html','_blank')">Sign Up for Newsletter</button>
+    </section>
+
+    <section class="center">
+        <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    </section>
+</main>
+
+<footer class="light-mode">
+    <div class="footer-content">
+        <p>Contact: <a href="mailto:chaulagainmandira9@gmail.com">chaulagainmandira9@gmail.com</a></p>
+        <p>Phone: <a href="tel:+61401821385">0401 821 385</a></p>
+        <p>&copy; 2025 Mandira Chaulagain. All content and images used with permission.</p>
+    </div>
+</footer>
+
+
+<script>
+    function toggleMode() {
+        const elements = [
+            document.body,
+            document.querySelector("header"),
+            document.querySelector("nav"),
+            document.querySelector("footer")
+        ];
+
+        elements.forEach(element => {
+            element.classList.toggle("dark-mode");
+            element.classList.toggle("light-mode");
+        });
+    }
+</script>
+</body>
+</html>

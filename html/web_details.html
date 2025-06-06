@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Detailed Frontend Skills Page by Mandira Chaulagain -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Frontend Development Skills | Mandira Chaulagain</title>
+    <link rel="stylesheet" href="../CSS/portfolio.css">
+    <link rel="icon" href="../images/mining_logo/logo.png" type="image/png">
+</head>
+<body class="light-mode">
+<header>
+    <a href="index.html">
+        <img src="../images/mining_logo/logo.png" alt="Mining logo" style="width: 300px; height: auto;">
+    </a>
+    <h1>My Frontend Development Journey</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MC_A4_resume.html">Resume</a></li>
+            <li><a href="MC_A4_about.html">About</a></li>
+            <li><a href="MC_A4_web_skills.html">Web Skills</a></li>
+            <li><a href="MC_A4_mining.html">Mining Cooperation</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="blog-container">
+    <article class="skill-article">
+        <h2>HTML5: The Foundation of the Web</h2>
+        <p>As the backbone of every website, I've dedicated significant time to mastering semantic HTML5 markup. Semantic tags aren't just about writing cleaner code—they fundamentally change how browsers and assistive technologies understand your content.</p>
+
+        <h3>Semantic Structure</h3>
+        <p>I consistently use elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> to create meaningful document outlines. This approach improves both SEO and accessibility.</p>
+
+        <div class="skill-example">
+                <pre><code>&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Article Title&lt;/h1&gt;
+        &lt;p&gt;Published on &lt;time datetime="2025-06-15"&gt;June 15, 2025&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;p&gt;Main content goes here...&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Article tags: &lt;a href="#"&gt;Web Development&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+        </div>
+
+        <h3>Forms and Media</h3>
+        <p>Modern HTML5 forms with proper input types (<code>email</code>, <code>tel</code>, <code>date</code>) and validation attributes help create better user experiences without excessive JavaScript. For media, I leverage the <code>&lt;picture&gt;</code> element and responsive images with <code>srcset</code> to ensure optimal performance across devices.</p>
+
+        <div class="skill-benefits">
+            <h4>Why Semantic HTML Matters:</h4>
+            <ul>
+                <li>Improved accessibility for screen readers</li>
+                <li>Better search engine visibility</li>
+                <li>Easier maintenance and code readability</li>
+                <li>Future-proof website structure</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="skill-article">
+        <h2>CSS3: Bringing Designs to Life</h2>
+        <p>While HTML provides structure, CSS3 is where I express creativity through design. My CSS approach focuses on maintainability, performance, and responsive behavior.</p>
+
+        <h3>Layout with Flexbox</h3>
+        <p>Flexbox has revolutionized how I create layouts. I use it for everything from simple centering to complex responsive navigation menus. The ability to easily control alignment, direction, and spacing makes it my go-to for component layouts.</p>
+
+        <div class="skill-example">
+                <pre><code>.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    /* Additional card styles */
+}</code></pre>
+        </div>
+
+        <h3>Animations and Transitions</h3>
+        <p>Subtle animations can greatly enhance user experience when used judiciously. I prefer CSS animations over JavaScript for performance reasons, using <code>@keyframes</code> for complex sequences and <code>transition</code> for simple state changes.</p>
+
+        <div class="skill-example">
+                <pre><code>.button {
+    transition: all 0.3s ease;
+    background-color: #4CAF50;
+}
+
+.button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}</code></pre>
+        </div>
+
+        <h3>Responsive Design Philosophy</h3>
+        <p>I build with a mobile-first approach, using media queries to progressively enhance the experience on larger screens. My typical workflow includes:</p>
+        <ol>
+            <li>Designing for small screens first</li>
+            <li>Establishing typography scales using relative units (rem, em)</li>
+            <li>Using fluid layouts with percentage-based widths</li>
+            <li>Adding breakpoints only when necessary</li>
+        </ol>
+    </article>
+
+    <article class="skill-article">
+        <h2>JavaScript: Adding Interactivity</h2>
+        <p>While I consider myself more design-focused, I've developed solid foundational JavaScript skills to create dynamic user experiences.</p>
+
+        <h3>DOM Manipulation</h3>
+        <p>I can efficiently select, traverse, and modify DOM elements to create interactive pages. My approach emphasizes event delegation and efficient selectors to maintain performance.</p>
+
+        <div class="skill-example">
+                <pre><code>// Event delegation example
+document.getElementById('nav-list').addEventListener('click', function(e) {
+    if(e.target.tagName === 'A') {
+        e.preventDefault();
+        // Handle navigation
+        console.log('Navigating to:', e.target.href);
+    }
+});</code></pre>
+        </div>
+
+        <h3>Form Validation</h3>
+        <p>While I prefer HTML5 validation where possible, I can enhance it with JavaScript for more complex scenarios or better user feedback.</p>
+
+        <div class="skill-benefits">
+            <h4>My JavaScript Principles:</h4>
+            <ul>
+                <li>Progressive enhancement - core functionality works without JS</li>
+                <li>Modular code organization</li>
+                <li>Clear, descriptive variable and function names</li>
+                <li>Thorough commenting for complex logic</li>
+            </ul>
+        </div>
+    </article>
+
+    <article class="skill-article">
+        <h2>Visual Studio Code: My Development Environment</h2>
+        <p>A well-configured editor can dramatically improve productivity. My VS Code setup includes:</p>
+
+        <h3>Essential Extensions</h3>
+        <ul>
+            <li><strong>Live Server:</strong> For instant browser reloading</li>
+            <li><strong>Prettier:</strong> Automatic code formatting</li>
+            <li><strong>ESLint:</strong> JavaScript linting</li>
+            <li><strong>IntelliSense:</strong> Smart code completion</li>
+            <li><strong>Color Highlight:</strong> Visual CSS color codes</li>
+        </ul>
+
+        <h3>Workflow Tips</h3>
+        <p>I've customized my environment with:</p>
+        <ul>
+            <li>Keyboard shortcuts for frequent actions</li>
+            <li>Workspace-specific settings for different projects</li>
+            <li>Integrated terminal for quick commands</li>
+            <li>Emmet abbreviations for rapid HTML/CSS writing</li>
+        </ul>
+
+        <img src="https://via.placeholder.com/800x400?text=VS+Code+Screenshot" alt="My VS Code setup" class="skill-image">
+    </article>
+
+    <a href="MC_A4_web_skills.html" class="back-link">← Back to Web Skills Overview</a>
+
+    <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+</main>
+
+<footer>
+    <p>&copy; 2025 Mandira Chaulagain. All rights reserved.</p>
+    <p>Last updated: June 2025</p>
+</footer>
+
+<script>
+    function toggleMode() {
+        const body = document.querySelector('body');
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+
+        // Save preference to localStorage
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+    }
+
+    // Check for saved user preference
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'true') {
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
+        }
+    });
+</script>
+</body>
+</html>

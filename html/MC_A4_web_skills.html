@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Web Skills Page by Mandira Chaulagain | 2025-04-29 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandira's Web Skills</title>
+    <link rel="stylesheet" href="../CSS/portfolio.css">
+    <!-- Favicon (small logo shown in the browser tab) -->
+    <!-- Favicon (small logo shown in the browser tab) -->
+    <link rel="icon" href="../images/mining_logo/logo.png" type="image/png">
+</head>
+<body class="light-mode">
+<header>
+    <!-- Logo and Title -->
+    <img src="../images/mining_logo/logo.png" alt="Mining logo"
+         style="width: 400px; height: auto; vertical-align: middle;">
+    <h1>Web Skills</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MC_A4_resume.html">Resume</a></li>
+            <li><a href="MC_A4_about.html">About</a></li>
+            <li><a href="MC_A4_web_skills.html">Web Skills</a></li>
+            <li><a href="MC_A4_mining.html">Mining Cooperation</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Languages & Tools I Know</h2>
+        <ul>
+            <li><span class="accent">HTML5</span> – Semantic tags, forms, media</li>
+            <li><span class="accent">CSS3</span> – Flexbox, animations, responsive design</li>
+            <li>JavaScript – Basics of DOM, interaction</li>
+            <li>Visual Studio Code – My preferred editor</li>
+            <li><a href="web_details.html">learn More</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Skills in Action</h2>
+        <ol>
+            <li>Built a fully responsive portfolio website</li>
+            <li>Implemented dark/light toggle and media queries</li>
+            <li>Used internal, inline, and external CSS for styling</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2> Skills I have</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Database Management</h3>
+                <p>Designed and maintained SQL databases for tracking mineral inventories, equipment maintenance, and safety compliance records. Implemented data visualization dashboards for operational analytics.</p>
+                <a href="database_skills.html" class="learn-more">Learn More</a>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java Programming</h3>
+                <p>Developed custom applications for equipment monitoring systems and geological data analysis. Created automation scripts to streamline reporting processes.</p>
+                <a href="java_skills.html" class="learn-more">Learn More</a>
+            </div>
+
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Built internal web portals for real-time monitoring of mining operations. Designed responsive interfaces for field technicians to access schematics and manuals.</p>
+                <a href="web_details.html" class="learn-more">Learn More</a>
+            </div>
+
+            <div class="skill-card">
+                <h3>Communication</h3>
+                <p>Facilitated cross-department collaboration through documentation and training materials. Translated technical specifications for non-technical stakeholders.</p>
+                <a href="communication_skills.html" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Learning Platforms</h2>
+        <p>I continuously upgrade my knowledge using:</p>
+        <ul>
+            <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a></li>
+        </ul>
+        <p>💡 I believe in designing with simplicity, consistency, and user focus.</p>
+    </section>
+
+    <section>
+        <!-- Toggle Button (Optional on this page) -->
+        <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Mandira Chaulagain. Content created by me or used with permission.</p>
+</footer>
+
+<script>
+    function toggleMode() {
+        const body = document.querySelector('body');
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+    }
+</script>
+</body>
+</html>

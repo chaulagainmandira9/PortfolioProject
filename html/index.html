@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandira's Portfolio</title>
+  <link rel="stylesheet" href="../CSS/portfolio.css">
+    <link rel="icon" href="../images/mining_logo/logo.png" type="image/png">
+</head>
+<body class="light-mode">
+  <header class="header light-mode">
+    <img src="../images/mining_logo/logo.png" alt="Mining logo" style="width: 400px; height: auto; vertical-align: middle;">
+
+    <h1>Welcome to Mandira's Portfolio</h1>
+
+    <nav class="light-mode">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="MC_A4_resume.html">Resume</a></li>
+        <li><a href="MC_A4_about.html">About</a></li>
+        <li><a href="MC_A4_web_skills.html">Web Skills</a></li>
+        <li><a href="MC_A4_mining.html">Mining Cooperation</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Hi, I am Mandira Chaulagain.</h2>
+      <p>I am a 3rd-year student majoring in Cyber Security at Charles Sturt University.</p>
+      <img src="../images/Mandira_photo/IMG_0665.jpg" alt="Mandira's Photo" style="width: 400px; height: auto; vertical-align: middle;">
+
+    </section>
+
+    <section>
+      <h2>Introduction to Mining</h2>
+      <p>
+        Mining is the process of extracting rocks from the Earth's surface to obtain useful minerals.
+        These minerals are essential for creating everyday items such as cars, computers, buildings,
+        and even products like toothpaste. For more details, visit this
+        <a href="https://miningmatters.ca/resource/introduction-mining" target="_blank">mining introduction</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Mining Screenshots</h2>
+      <img src="../images/mining_screenshot/image1.jpeg" alt="Mining Screenshot 1" style="width: 400px; height: auto; vertical-align: middle;">
+      <img src="../images/mining_screenshot/image2.png" alt="Mining Screenshot 2" style="width: 400px; height: auto; vertical-align: middle;">
+      <img src="../images/mining_screenshot/image3.jpg" alt="Mining Screenshot 3" style="width: 400px; height: auto; vertical-align: middle;">
+    </section>
+
+    <section>
+      <h2>Toggle Mode</h2>
+      <button class="toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    </section>
+  </main>
+
+  <footer class="light-mode">
+    <p>Contact: <a href="mailto:chaulagainmandira9@gmail.com">chaulagainmandira9@gmail.com</a> |
+    Phone: <a href="tel:+61401821385">0401 821 385</a></p>
+    <p>&copy; 2025 Mandira Chaulagain. I have permission to use all content and images on this site.</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const header = document.querySelector("header");
+      const nav = document.querySelector("nav");
+      const footer = document.querySelector("footer");
+
+      body.classList.toggle("dark-mode");
+      body.classList.toggle("light-mode");
+      header.classList.toggle("dark-mode");
+      header.classList.toggle("light-mode");
+      nav.classList.toggle("dark-mode");
+      nav.classList.toggle("light-mode");
+      footer.classList.toggle("dark-mode");
+      footer.classList.toggle("light-mode");
+    }
+  </script>
+</body>
+</html>

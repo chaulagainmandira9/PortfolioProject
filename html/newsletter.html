@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineralTech Newsletter Signup</title>
+</head>
+<body onload="welcomeAlert()">
+<!-- Go Back Button at the top -->
+<button class="back-btn" onclick="window.location.href='index.html'">← Go Back</button>
+
+<div class="form-container">
+    <h1>MineralTech Corporation - Newsletter Signup</h1>
+
+    <form id="newsletterForm" action="index.html" method="post" onsubmit="return validateForm()">
+        <!-- Personal Information Section -->
+        <div class="form-group">
+            <label for="firstName" class="required">First Name</label>
+            <input type="text" id="firstName" name="firstName" maxlength="60" required>
+            <p class="instructions">Please enter your first name (required)</p>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="required">Last Name</label>
+            <input type="text" id="lastName" name="lastName" maxlength="60" required>
+            <p class="instructions">Please enter your last name (required)</p>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="required">Email Address</label>
+            <input type="email" id="email" name="email" maxlength="60" required>
+            <p class="instructions">Please enter a valid email address (required)</p>
+        </div>
+
+        <!-- Age Group Radio Buttons -->
+        <div class="form-group">
+            <label class="required">Age Group</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="age15-25" name="ageGroup" value="15-25" required>
+                    <label for="age15-25">15-25 years</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="age26-35" name="ageGroup" value="26-35">
+                    <label for="age26-35">26-35 years</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="age36-45" name="ageGroup" value="36-45">
+                    <label for="age36-45">36-45 years</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="age46-55" name="ageGroup" value="46-55">
+                    <label for="age46-55">46-55 years</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="age55plus" name="ageGroup" value="55+">
+                    <label for="age55plus">55+ years</label>
+                </div>
+            </div>
+            <p class="instructions">Please select your age group (required)</p>
+        </div>
+
+        <!-- Areas of Interest Checkboxes -->
+        <div class="form-group">
+            <label>Areas of Interest (Select at least one)</label>
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="mineralExploration" name="interest" value="Mineral Exploration">
+                    <label for="mineralExploration">Mineral Exploration</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="sustainableMining" name="interest" value="Sustainable Mining">
+                    <label for="sustainableMining">Sustainable Mining Practices</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="miningTech" name="interest" value="Mining Technology">
+                    <label for="miningTech">Mining Technology Innovations</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="careerOpportunities" name="interest" value="Career Opportunities">
+                    <label for="careerOpportunities">Career Opportunities</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="investorNews" name="interest" value="Investor News">
+                    <label for="investorNews">Investor News</label>
+                </div>
+            </div>
+            <p class="instructions">Select the topics you're interested in</p>
+        </div>
+
+        <!-- Additional Comments -->
+        <div class="form-group">
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" cols="60" rows="3"></textarea>
+            <p class="instructions">Any additional information you'd like to share</p>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="btn-group">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Welcome message when page loads
+    function welcomeAlert() {
+        alert("Welcome to the MineralTech Corporation - Newsletter Signup");
+    }
+
+    // Form validation function
+    function validateForm() {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+
+        // Check if name fields are empty
+        if (firstName === "" || lastName === "") {
+            alert("Please fill in all required fields (First Name and Last Name)");
+            return false; // Prevent form submission
+        }
+
+        // Check if at least one checkbox is selected
+        const checkboxes = document.querySelectorAll('input[name="interest"]:checked');
+        if (checkboxes.length === 0) {
+            alert("Please select at least one area of interest");
+            return false;
+        }
+
+        // If all validations pass, allow form submission
+        // After submission, redirect to index.html
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 1000);
+
+        return true;
+    }
+</script>
+</body>
+</html>
