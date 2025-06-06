@@ -1,0 +1,63 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Prepare deployment
+        run: |
+          mkdir -p deploy
+          
+          # Copy HTML files to root
+          cp -r html/* deploy/
+          
+          # Copy CSS and images to root
+          cp -r CSS deploy/
+          cp -r images deploy/
+          
+          # Fix paths: ../CSS/ becomes CSS/ and ../images/ becomes images/
+          find deploy -name "*.html" -type f -exec sed -i.bak 's|../CSS/|CSS/|g' {} \;
+          find deploy -name "*.html" -type f -exec sed -i.bak 's|../images/|images/|g' {} \;
+          
+          # Remove backup files
+          find deploy -name "*.bak" -delete
+          
+          # List files to verify structure
+          echo "Deploy directory contents:"
+          ls -la deploy/
+          echo "CSS directory:"
+          ls -la deploy/CSS/ || echo "CSS folder missing!"
+          echo "Images directory:"
+          ls -la deploy/images/ || echo "Images folder missing!"
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './deploy'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
