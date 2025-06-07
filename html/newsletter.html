@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MineralTech Newsletter Signup</title>
+    <link rel="stylesheet" href="../CSS/portfolio.css">
 </head>
 <body onload="welcomeAlert()">
-<!-- Go Back Button at the top -->
 <button class="back-btn" onclick="window.location.href='index.html'">← Go Back</button>
 
 <div class="form-container">
     <h1>MineralTech Corporation - Newsletter Signup</h1>
 
-    <form id="newsletterForm" action="https://formspree.io/f/xblydjve" method="post" onsubmit="return validateForm()">
-        <!-- Personal Information Section -->
+    <form id="newsletterForm" action="https://api.staticforms.xyz/submit" method="post" onsubmit="return validateForm()">
+        <input type="hidden" name="apiKey" value="sf_5lh0l22a13li3h0khegcb931">
+        <input type="hidden" name="redirectTo" value="https://chaulagainmandira9.github.io/PortfolioProject/index.html">
+        <input type="hidden" name="subject" value="New MineralTech Newsletter Subscriber!">
+
         <div class="form-group">
             <label for="firstName" class="required">First Name</label>
             <input type="text" id="firstName" name="firstName" maxlength="60" required>
@@ -32,7 +35,6 @@
             <p class="instructions">Please enter a valid email address (required)</p>
         </div>
 
-        <!-- Age Group Radio Buttons -->
         <div class="form-group">
             <label class="required">Age Group</label>
             <div class="radio-group">
@@ -60,42 +62,39 @@
             <p class="instructions">Please select your age group (required)</p>
         </div>
 
-        <!-- Areas of Interest Checkboxes -->
         <div class="form-group">
             <label>Areas of Interest (Select at least one)</label>
             <div class="checkbox-group">
                 <div class="checkbox-option">
-                    <input type="checkbox" id="mineralExploration" name="interest" value="Mineral Exploration">
+                    <input type="checkbox" id="mineralExploration" name="interest[]" value="Mineral Exploration">
                     <label for="mineralExploration">Mineral Exploration</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="sustainableMining" name="interest" value="Sustainable Mining">
+                    <input type="checkbox" id="sustainableMining" name="interest[]" value="Sustainable Mining">
                     <label for="sustainableMining">Sustainable Mining Practices</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="miningTech" name="interest" value="Mining Technology">
+                    <input type="checkbox" id="miningTech" name="interest[]" value="Mining Technology">
                     <label for="miningTech">Mining Technology Innovations</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="careerOpportunities" name="interest" value="Career Opportunities">
+                    <input type="checkbox" id="careerOpportunities" name="interest[]" value="Career Opportunities">
                     <label for="careerOpportunities">Career Opportunities</label>
                 </div>
                 <div class="checkbox-option">
-                    <input type="checkbox" id="investorNews" name="interest" value="Investor News">
+                    <input type="checkbox" id="investorNews" name="interest[]" value="Investor News">
                     <label for="investorNews">Investor News</label>
                 </div>
             </div>
             <p class="instructions">Select the topics you're interested in</p>
         </div>
 
-        <!-- Additional Comments -->
         <div class="form-group">
             <label for="comments">Additional Comments</label>
             <textarea id="comments" name="comments" cols="60" rows="3"></textarea>
             <p class="instructions">Any additional information you'd like to share</p>
         </div>
 
-        <!-- Form Buttons -->
         <div class="btn-group">
             <button type="submit" class="submit-btn">Submit</button>
             <button type="reset" class="reset-btn">Reset</button>
@@ -113,26 +112,46 @@
     function validateForm() {
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern for validation
 
-        // Check if name fields are empty
+        // 1. Validate First and Last Name
         if (firstName === "" || lastName === "") {
-            alert("Please fill in all required fields (First Name and Last Name)");
+            alert("Please fill in all required fields (First Name and Last Name).");
             return false; // Prevent form submission
         }
 
-        // Check if at least one checkbox is selected
-        const checkboxes = document.querySelectorAll('input[name="interest"]:checked');
-        if (checkboxes.length === 0) {
-            alert("Please select at least one area of interest");
+        // 2. Validate Email Format
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
             return false;
         }
 
-        // If all validations pass, allow form submission
-        // After submission, redirect to index.html
-        setTimeout(function() {
-            window.location.href = "index.html";
-        }, 1000);
+        // 3. Validate Age Group (at least one radio button selected)
+        const ageGroupRadios = document.querySelectorAll('input[name="ageGroup"]');
+        let ageGroupSelected = false;
+        for (const radio of ageGroupRadios) {
+            if (radio.checked) {
+                ageGroupSelected = true;
+                break;
+            }
+        }
+        if (!ageGroupSelected) {
+            alert("Please select your age group.");
+            return false;
+        }
 
+        // 4. Validate Areas of Interest (at least one checkbox selected)
+        // Updated selector to match name="interest[]"
+        const checkboxes = document.querySelectorAll('input[name="interest[]"]:checked');
+        if (checkboxes.length === 0) {
+            alert("Please select at least one area of interest.");
+            return false;
+        }
+
+        // If all validations pass, allow form submission to StaticForms.xyz.
+        // StaticForms.xyz will handle the redirection after submission using the 'redirectTo' hidden field.
+        // DO NOT add setTimeout or window.location.href here.
         return true;
     }
 </script>
